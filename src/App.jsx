@@ -1,21 +1,20 @@
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import {Header, Footer} from './components/index.jsx'
-import { Home, Movie,Counter } from './pages/index.js'
+import { Layout} from 'antd';
+import AppHeader from './components/Layout/AppHeader'
+import AppSider from './components/Layout/AppSider';
+import AppContent from './components/Layout/AppContent';
 
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/movie' element={<Movie/>} />
-      </Routes>
-      <Counter/>
-      <Footer />
-    </>
+    <Layout>
+      <AppHeader/>
+      <Layout>
+        <AppSider/>
+        <AppContent/>
+      </Layout>
+    </Layout>
   )
 }
 
