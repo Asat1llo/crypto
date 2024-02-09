@@ -1,20 +1,14 @@
 import './App.css'
-import { Layout} from 'antd';
-import AppHeader from './components/Layout/AppHeader'
-import AppSider from './components/Layout/AppSider';
-import AppContent from './components/Layout/AppContent';
+import {CryptoContextProvider} from './Context/crypto-context.jsx'
+import AppLayout from './components/Layout/AppLayout.jsx'
 
 
 function App() {
 
   return (
-    <Layout>
-      <AppHeader/>
-      <Layout>
-        <AppSider/>
-        <AppContent/>
-      </Layout>
-    </Layout>
+    <CryptoContextProvider>
+     <AppLayout/>
+    </CryptoContextProvider>
   )
 }
 
